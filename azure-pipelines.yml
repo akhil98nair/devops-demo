@@ -16,5 +16,11 @@ steps:
   displayName: 'Run Docker container'
 - script: docker ps
   displayName: 'List running Docker containers'
-- script: curl -X POST http://localhost:3000/tasks -H "Content-Type: application/json" -d '{"title": "Sample Task", "completed": false}'
+- script: |
+    echo "Waiting for the application to be ready..."
+    for i in {1..10}; do
+      curl -X POST http://localhost:3000/tasks -H "Content-Type: application/json" -d '{"title": "Sample Task", "completed": false}' && break
+      echo "Retrying in 5 seconds..."
+      sleep 5
+    done
   displayName: 'Test application'
