@@ -1,0 +1,19 @@
+{
+  "name": "devopsvitdemo",
+  "version": "1.0.0",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "repository": {
+    "type": "git",
+    "url": "https://akhil.nair16:C8jF5xGX4bz0lWjjJQwoEGUyqwN639OTpHhA4xTryMTOXesCtZKmJQQJ99BCACAAAAA21dt1AAASAZDO3jwZ@dev.azure.com/demoSIES/DevopsVITDemo/_git/DevopsVITDemo"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -10,5 +10,11 @@ pool:
   name: Default
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: docker build -t simplenodejsapp .
+  displayName: 'Build Docker image'
+- script: docker run -d -p 3000:3000 simplenodejsapp
+  displayName: 'Run Docker container'
+- script: docker ps
+  displayName: 'List running Docker containers'
+- script: curl -X POST http://localhost:3000/tasks -H "Content-Type: application/json" -d '{"title": "Sample Task", "completed": false}'
+  displayName: 'Test application'
